@@ -1,0 +1,155 @@
+
+/**
+ * Assignment 1: Function Signatures
+ * Assignment Description:
+ * Your task is to define a function signature CalculateSumFunction that takes two numbers as parameters and returns their sum. After defining the function signature, implement a function calculateSum that adheres to this signature. Test your function by adding two numbers and display the sum.
+ */
+ 
+// Assignment 1 Template
+type CalculateSumFunction = (a: number, b: number) => number;
+const calculateSum: CalculateSumFunction = (a, b) => {
+  // Your implementation here
+
+};
+const result: number = calculateSum(5, 10);
+console.log("Sum:", result);
+
+
+
+
+//Assignment 2: DOM & Type Casting
+/*
+* Assignment Description:
+* In this assignment, you'll work with the DOM and type casting. Create an HTML element with the id "yourElementId" and type cast it to an HTMLElement. Change the background color of this element to green.
+* - Your element might be null, so check for null, if it is null, do nothing, if its not null, change the background color to green.
+*/
+
+
+// Assignment 2 Template
+const yourElement = document.getElementById("yourElementId"); // Some type casting here missing
+// Your implementation here
+// => yourElement might be null, so check for null before you change the background color
+
+  // Change the background color to green
+
+
+
+
+// Assignment 3: Classes
+/*
+Assignment Description:
+Classes are fundamental in TypeScript. Your task is to create a class YourClass with properties yourProperty. Implement a method displayProperty that displays the property. Instantiate an object of the YourClass class and call the displayProperty method.
+*/
+// Assignment 3 Template
+class YourClass {
+  yourProperty: string;
+
+  constructor(property: string) {
+    // Your implementation here
+
+  }
+  displayProperty(): void {
+    // Your implementation here
+  
+  }
+}
+
+const yourObject = new YourClass("Example");
+yourObject.displayProperty();
+
+
+
+
+
+/** 
+ * Assignment 4: Public, Private, and Readonly
+ * Assignment Description:
+ * Understanding access modifiers is vital. Your task is to create a class Employee with public, private, and readonly properties for employeeName, employeeId, and employeeTitle respectively. Implement a method displayEmployeeDetails to showcase these properties. Instantiate an employee object and display its details.
+ * 
+*/
+
+// Assignment 4 Template
+class Employee {
+   employeeName: string; // Error here: assign access modifiers on this line
+   employeeId: number;  // Error here: assign access modifiers on this line
+  constructor(name: string, id: number) {
+    // Your implementation here
+
+  }
+  displayEmployeeDetails(): void {
+    // Your implementation here
+
+  }
+}
+
+const employee = new Employee("Alice Smith", 456);
+employee.displayEmployeeDetails();
+
+
+
+/**
+ * 
+ * Assignment 5: Modules
+ * Assignment Description:
+ * Modules help organize code. Your task is to create a TypeScript module that exports a function to perform a specific calculation. Import this function into another file, use it to perform a calculation, and display the result.
+ * Make sure you create another file to put your export function in.
+ * Then import it into this file.
+ * Then use it to perform a calculation.
+ * Then display the result.
+ */
+
+// Assignment 5 Template(s)
+// yourModule.ts
+export function yourFunction(input: number): number { // Or any if you want to use generics or do something else that doesnt calculate a number. Or you can make it a void, if it doesnt return anything.
+  // Your implementation here
+  // ...
+}
+
+// this file (main.ts)
+// Import your function here and then use it to perform a calculation
+
+const resultModules = yourFunction(/* Provide an input */);
+console.log("Result:", resultModules);
+
+
+
+
+
+
+/**
+ * Assignment 6: Interface
+ * Assignment Description:
+ * Interfaces are essential in TypeScript. Define an interface YourInterface with properties yourProperty1 and yourProperty2. Create a class YourClass that implements this interface and uses these properties. Instantiate a YourClass object and display its properties.
+ */
+
+// Assignment 6 Template
+interface YourInterface {
+  // Your implementation here
+}
+
+class YourClass implements YourInterface {
+  // Your implementation here
+}
+
+const yourInstance = new YourClass(/* Provide necessary properties */);
+console.log("Your Instance:", yourInstance);
+
+
+
+/**
+ * 
+ * Assignment 7: Interface with Classes
+ * Assignment Description:
+ * Understanding how interfaces work with classes is crucial. Define an interface YourInterface with properties property1, property2, and a method yourMethod. Create a class YourClass that implements this interface and displays the properties using the yourMethod. Instantiate a YourClass object and call the yourMethod.
+ */
+// Assignment 7 Template
+interface YourInterface {
+  // Your implementation here
+}
+
+class YourClass implements YourInterface {
+  // Your implementation here
+}
+
+const yourInstance = new YourClass(/* Provide necessary properties */);
+yourInstance.yourMethod();
