@@ -1,38 +1,32 @@
-
+//Assignment 1: Function Signatures
+/*
 /**
- * Assignment 1: Function Signatures
  * Assignment Description:
  * Your task is to define a function signature CalculateSumFunction that takes two numbers as parameters and returns their sum. After defining the function signature, implement a function calculateSum that adheres to this signature. Test your function by adding two numbers and display the sum.
- */
+ * 
+ * */
  
-// Assignment 1 Template
+// Completed Assignment
 type CalculateSumFunction = (a: number, b: number) => number;
 const calculateSum: CalculateSumFunction = (a, b) => {
-  // Your implementation here
-
+  return a + b;
 };
 const result: number = calculateSum(5, 10);
 console.log("Sum:", result);
 
 
 
-
 //Assignment 2: DOM & Type Casting
 /*
-* Assignment Description:
-* In this assignment, you'll work with the DOM and type casting. Create an HTML element with the id "yourElementId" and type cast it to an HTMLElement. Change the background color of this element to green.
-* - Your element might be null, so check for null, if it is null, do nothing, if its not null, change the background color to green.
-*/
+Assignment Description:
+In this assignment, you'll work with the DOM and type casting. Create an HTML element with the id "yourElementId" and type cast it to an HTMLElement. Change the background color of this element to green.*/
 
-
-// Assignment 2 Template
+// Completed Assignment
+// Assignment Template
 const yourElement = document.getElementById("yourElementId"); // Some type casting here missing
-// Your implementation here
-// => yourElement might be null, so check for null before you change the background color
-
-  // Change the background color to green
-
-
+if (yourElement) {
+  yourElement.style.backgroundColor = "green";
+}
 
 
 // Assignment 3: Classes
@@ -40,17 +34,15 @@ const yourElement = document.getElementById("yourElementId"); // Some type casti
 Assignment Description:
 Classes are fundamental in TypeScript. Your task is to create a class YourClass with properties yourProperty. Implement a method displayProperty that displays the property. Instantiate an object of the YourClass class and call the displayProperty method.
 */
-// Assignment 3 Template
+// Completed Assignment
 class YourClass {
   yourProperty: string;
 
   constructor(property: string) {
-    // Your implementation here
-
+    this.yourProperty = property;
   }
   displayProperty(): void {
-    // Your implementation here
-  
+    console.log(`Your property: ${this.yourProperty}`);
   }
 }
 
@@ -60,25 +52,18 @@ yourObject.displayProperty();
 
 
 
+//Assignment 4: Public, Private, and Readonly
 
-/** 
- * Assignment 4: Public, Private, and Readonly
- * Assignment Description:
- * Understanding access modifiers is vital. Your task is to create a class Employee with public, private, and readonly properties for employeeName, employeeId, and employeeTitle respectively. Implement a method displayEmployeeDetails to showcase these properties. Instantiate an employee object and display its details.
- * 
-*/
-
-// Assignment 4 Template
+// Completed Assignment
 class Employee {
-   employeeName: string; // Error here: assign access modifiers on this line
-   employeeId: number;  // Error here: assign access modifiers on this line
+  public employeeName: string;
+  private employeeId: number;
   constructor(name: string, id: number) {
-    // Your implementation here
-
+    this.employeeName = name;
+    this.employeeId = id;
   }
   displayEmployeeDetails(): void {
-    // Your implementation here
-
+    console.log(`Employee ID: ${this.employeeId}, Name: ${this.employeeName}`);
   }
 }
 
@@ -87,30 +72,30 @@ employee.displayEmployeeDetails();
 
 
 
+
+
 /**
  * 
  * Assignment 5: Modules
  * Assignment Description:
  * Modules help organize code. Your task is to create a TypeScript module that exports a function to perform a specific calculation. Import this function into another file, use it to perform a calculation, and display the result.
- * Make sure you create another file to put your export function in.
- * Then import it into this file.
- * Then use it to perform a calculation.
- * Then display the result.
+ * 
  */
 
-// Assignment 5 Template(s)
+//Assignment 5: Modules
+// Completed Assignment
 // yourModule.ts
-export function yourFunction(input: number): number { // Or any if you want to use generics or do something else that doesnt calculate a number. Or you can make it a void, if it doesnt return anything.
+
+export function yourFunction(input: any): any {
   // Your implementation here
-  // ...
+  return input;
 }
 
-// this file (main.ts)
-// Import your function here and then use it to perform a calculation
+// main.ts
+import { yourFunction } from './yourModule';
 
-const resultModules = yourFunction(/* Provide an input */);
-console.log("Result:", resultModules);
-
+const result = yourFunction(/* Provide an input */);
+console.log("Result:", result);
 
 
 
@@ -122,17 +107,28 @@ console.log("Result:", resultModules);
  * Interfaces are essential in TypeScript. Define an interface YourInterface with properties yourProperty1 and yourProperty2. Create a class YourClass that implements this interface and uses these properties. Instantiate a YourClass object and display its properties.
  */
 
-// Assignment 6 Template
+
+// Completed Assignment
 interface YourInterface {
-  // Your implementation here
+  name: string;
+  calculateSomething(): number;
 }
 
 class YourClass implements YourInterface {
-  // Your implementation here
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  calculateSomething(): number {
+    // Your implementation here
+    return 42;
+  }
 }
 
-const yourInstance = new YourClass(/* Provide necessary properties */);
-console.log("Your Instance:", yourInstance);
+const yourInstance = new YourClass("Example");
+console.log("Your Instance:", yourInstance.calculateSomething());
 
 
 
@@ -142,14 +138,27 @@ console.log("Your Instance:", yourInstance);
  * Assignment Description:
  * Understanding how interfaces work with classes is crucial. Define an interface YourInterface with properties property1, property2, and a method yourMethod. Create a class YourClass that implements this interface and displays the properties using the yourMethod. Instantiate a YourClass object and call the yourMethod.
  */
-// Assignment 7 Template
+
+// Completed Assignment
 interface YourInterface {
-  // Your implementation here
+  property1: string;
+  property2: number;
+  yourMethod(): void;
 }
 
 class YourClass implements YourInterface {
-  // Your implementation here
+  property1: string;
+  property2: number;
+
+  constructor(prop1: string, prop2: number) {
+    this.property1 = prop1;
+    this.property2 = prop2;
+  }
+
+  yourMethod(): void {
+    console.log(`Property 1: ${this.property1}, Property 2: ${this.property2}`);
+  }
 }
 
-const yourInstance = new YourClass(/* Provide necessary properties */);
+const yourInstance = new YourClass("Value 1", 42);
 yourInstance.yourMethod();
