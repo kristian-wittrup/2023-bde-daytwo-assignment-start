@@ -9,10 +9,13 @@
 // Completed Assignment
 type CalculateSumFunction = (a: number, b: number) => number;
 const calculateSum: CalculateSumFunction = (a, b) => {
-  return a + b;
+    return a + b;
 };
-const result: number = calculateSum(5, 10);
-console.log("Sum:", result);
+
+const num1 = 5;
+const num2 = 10;
+const sum = calculateSum(num1, num2);
+console.log(`The sum of ${num1} and ${num2} is ${sum}`);
 
 
 
@@ -23,16 +26,21 @@ In this assignment, you'll work with the DOM and type casting. Create an HTML el
 
 // Completed Assignment
 // Assignment Template
-const yourElement = document.getElementById("yourElementId"); // Some type casting here missing
-if (yourElement) {
-  yourElement.style.backgroundColor = "green";
+const element = document.getElementById("yourElementId"); // Some type casting here missing
+if (element) {
+  element.style.backgroundColor = "green";
+  console.log("Element background color changed to green");
 }
 
 
 // Assignment 3: Classes
 /*
 Assignment Description:
-Classes are fundamental in TypeScript. Your task is to create a class YourClass with properties yourProperty. Implement a method displayProperty that displays the property. Instantiate an object of the YourClass class and call the displayProperty method.
+Classes are fundamental in TypeScript. Your task is to create a class 
+YourClass with properties yourProperty. Implement a method displayProperty 
+that displays the property. 
+Instantiate an object of the YourClass class and call the 
+displayProperty method.
 */
 // Completed Assignment
 class YourClass {
@@ -58,16 +66,19 @@ yourObject.displayProperty();
 class Employee {
   public employeeName: string;
   private employeeId: number;
-  constructor(name: string, id: number) {
+  readonly employeeTitle: string;
+
+  constructor(name: string, id: number, employeeTitle: string) {
     this.employeeName = name;
     this.employeeId = id;
+    this.employeeTitle = employeeTitle;
   }
   displayEmployeeDetails(): void {
-    console.log(`Employee ID: ${this.employeeId}, Name: ${this.employeeName}`);
+    console.log(`Employee ID: ${this.employeeId}, Name: ${this.employeeName}, Title: ${this.employeeTitle}`);
   }
 }
 
-const employee = new Employee("Alice Smith", 456);
+const employee = new Employee("Alice Smith", 456, "Web Developer");
 employee.displayEmployeeDetails();
 
 
@@ -104,61 +115,38 @@ console.log("Result:", result);
 /**
  * Assignment 6: Interface
  * Assignment Description:
- * Interfaces are essential in TypeScript. Define an interface YourInterface with properties yourProperty1 and yourProperty2. Create a class YourClass that implements this interface and uses these properties. Instantiate a YourClass object and display its properties.
- */
-
-
-// Completed Assignment
-interface YourInterface {
-  name: string;
-  calculateSomething(): number;
-}
-
-class YourClass implements YourInterface {
-  name: string;
-
-  constructor(name: string) {
-    this.name = name;
-  }
-
-  calculateSomething(): number {
-    // Your implementation here
-    return 42;
-  }
-}
-
-const yourInstance = new YourClass("Example");
-console.log("Your Instance:", yourInstance.calculateSomething());
-
-
-
-/**
+ * Interfaces are essential in TypeScript. 
+ * Define an interface YourInterface with 
+ * properties yourProperty1:string and yourProperty2:number. 
+ * Create a class YourClass that implements this 
+ * interface and uses these properties. 
  * 
- * Assignment 7: Interface with Classes
- * Assignment Description:
- * Understanding how interfaces work with classes is crucial. Define an interface YourInterface with properties property1, property2, and a method yourMethod. Create a class YourClass that implements this interface and displays the properties using the yourMethod. Instantiate a YourClass object and call the yourMethod.
+ * Instantiate a YourClass object and display its properties.
  */
 
+
 // Completed Assignment
+// Step 1: Define an interface YourInterface
 interface YourInterface {
-  property1: string;
-  property2: number;
-  yourMethod(): void;
+  yourProperty1: string;
+  yourProperty2: number;
 }
 
+// Step 2: Create a class YourClass that implements YourInterface
 class YourClass implements YourInterface {
-  property1: string;
-  property2: number;
+  yourProperty1: string;
+  yourProperty2: number;
 
-  constructor(prop1: string, prop2: number) {
-    this.property1 = prop1;
-    this.property2 = prop2;
-  }
-
-  yourMethod(): void {
-    console.log(`Property 1: ${this.property1}, Property 2: ${this.property2}`);
+  // Step 3: Implement the properties in YourClass
+  constructor(yourProperty1: string, yourProperty2: number) {
+      this.yourProperty1 = yourProperty1;
+      this.yourProperty2 = yourProperty2;
   }
 }
 
-const yourInstance = new YourClass("Value 1", 42);
-yourInstance.yourMethod();
+// Step 4: Instantiate an object of YourClass
+const yourClassInstance = new YourClass("Example String", 42);
+
+// Step 5: Display the properties of the instantiated object
+console.log(`yourProperty1: ${yourClassInstance.yourProperty1}`);
+console.log(`yourProperty2: ${yourClassInstance.yourProperty2}`);
