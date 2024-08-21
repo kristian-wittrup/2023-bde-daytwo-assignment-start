@@ -6,55 +6,79 @@
  */
  
 // Assignment 1 Template
+// Step 1: Defining a function signature CalculateSumFunction by using the type keyword
 type CalculateSumFunction = (a: number, b: number) => number;
-const calculateSum: CalculateSumFunction = (a, b) => {
-  // Your implementation here
 
+// Step 2: Implement the function adhering to the signature
+// Your implementation here - implement the function calculateSum that adheres to the CalculateSumFunction signature
+// fix the incorrectChangeMe type to the correct type
+const calculateSum: incorrectChangeMe = (a, b) => {
+   // Your implementation here - return the sum of the two numbers
 };
-const result: number = calculateSum(5, 10);
-console.log("Sum:", result);
 
-
+// Step 3: Test the function
+const num1 = 5;
+const num2 = 10;
+const sum = calculateSum(num1, num2);
+console.log(`The sum of ${num1} and ${num2} is ${sum}`);
 
 
 //Assignment 2: DOM & Type Casting
 /*
 * Assignment Description:
-* In this assignment, you'll work with the DOM and type casting. Create an HTML element with the id "yourElementId" and type cast it to an HTMLElement. Change the background color of this element to green.
-* - Your element might be null, so check for null, if it is null, do nothing, if its not null, change the background color to green.
+* In this assignment, you'll work with the DOM and type casting. 
+* Create an HTML element with the id "yourElementId" and type cast it to an 
+* HTMLElement. Change the background color of this element to green.
+* - Your element might be null, so check for null, if it is null, do nothing, 
+* if its not null, change the background color to green.
 */
 
 
 // Assignment 2 Template
-const yourElement = document.getElementById("yourElementId"); // Some type casting here missing
-// Your implementation here
-// => yourElement might be null, so check for null before you change the background color
+// Step 1: Select the HTML element with the id "yourElementId" 
+// Optional: type cast it to an HTMLElement | null
 
-  // Change the background color to green
+// Your implementation here - select the element with the id "yourElementId" and save it to a const named element
+const element = 
 
+// Step 2: Check if the element is not null
+if (element) { 
+    // Step 3: Change the background color to green
+    // Your implementation here - change the background color to green
+}
 
 
 
 // Assignment 3: Classes
 /*
 Assignment Description:
-Classes are fundamental in TypeScript. Your task is to create a class YourClass with properties yourProperty. Implement a method displayProperty that displays the property. Instantiate an object of the YourClass class and call the displayProperty method.
+Classes are fundamental in TypeScript. Your task is to create a class 
+YourClass with properties yourProperty. Implement a method displayProperty 
+that displays the property. 
+Instantiate an object of the YourClass class and call the 
+displayProperty method.
 */
 // Assignment 3 Template
+// Step 1: Create a class YourClass
 class YourClass {
-  yourProperty: string;
+  // Step 2: Define a property yourProperty
+  yourProperty: string; 
 
-  constructor(property: string) {
-    // Your implementation here
-
+  // Constructor to initialize the property
+  constructor(yourProperty: string) {
+    // Your implementation here - assign the property using the this keyword
   }
-  displayProperty(): void {
-    // Your implementation here
-  
+
+  // Step 3: Implement a method displayProperty that displays the property
+  public displayProperty(): void {
+    // Your implementation here - console.log the property
   }
 }
 
-const yourObject = new YourClass("Example");
+// Step 4: Instantiate an object of the YourClass class
+// Your implementation here - instantiate an object of YourClass
+
+// Step 5: Call the displayProperty method on the instantiated object
 yourObject.displayProperty();
 
 
@@ -69,20 +93,32 @@ yourObject.displayProperty();
 */
 
 // Assignment 4 Template
+// Step 1: Create a class Employee
 class Employee {
-   employeeName: string; // Error here: assign access modifiers on this line
-   employeeId: number;  // Error here: assign access modifiers on this line
-  constructor(name: string, id: number) {
-    // Your implementation here
+  // Step 2: Define a public property employeeName
+  // Your implementation here
 
+  // Step 3: Define a private property employeeId
+  // Your implementation here
+
+  // Step 4: Define a readonly property employeeTitle
+  // Your implementation here
+
+  // Constructor to initialize the properties
+  constructor(employeeName: string, employeeId: number, employeeTitle: string) {
+    // Your implementation here - assign the properties using the this keyword
   }
-  displayEmployeeDetails(): void {
-    // Your implementation here
 
+  // Step 5: Implement a method displayEmployeeDetails to showcase these properties
+  displayEmployeeDetails(): void { // We have a void here, because we are not using the return keyword
+    // Your implementation here - console.log the employee details
   }
 }
 
-const employee = new Employee("Alice Smith", 456);
+// Step 6: Instantiate an Employee object
+const employee = new Employee("John Doe", 12345, "Web Developer");
+
+// Step 7: Display the details of the instantiated Employee object
 employee.displayEmployeeDetails();
 
 
@@ -94,12 +130,12 @@ employee.displayEmployeeDetails();
  * Modules help organize code. Your task is to create a TypeScript module that exports a function to perform a specific calculation. Import this function into another file, use it to perform a calculation, and display the result.
  * Make sure you create another file to put your export function in.
  * Then import it into this file.
- * Then use it to perform a calculation.
- * Then display the result.
+ * Then use it to perform a calculation and return it in the module
+ * Then display the result in the console on main.ts
  */
 
 // Assignment 5 Template(s)
-// yourModule.ts
+// yourModule.ts ( make a new file named: yourModule.ts)
 export function yourFunction(input: number): number { // Or any if you want to use generics or do something else that doesnt calculate a number. Or you can make it a void, if it doesnt return anything.
   // Your implementation here
   // ...
@@ -117,39 +153,32 @@ console.log("Result:", resultModules);
 
 
 /**
- * Assignment 6: Interface
+ * OPTIONAL, as it is advanced
+ * Assignment 6: Interface 
  * Assignment Description:
- * Interfaces are essential in TypeScript. Define an interface YourInterface with properties yourProperty1 and yourProperty2. Create a class YourClass that implements this interface and uses these properties. Instantiate a YourClass object and display its properties.
+ * Interfaces are essential in TypeScript. 
+ * Define an interface YourInterface with properties yourProperty1 and yourProperty2. Create a class YourClass that implements this interface and uses these properties. Instantiate a YourClass object and display its properties.
  */
 
 // Assignment 6 Template
+// Step 1: Define an interface YourInterface
 interface YourInterface {
-  // Your implementation here
+  // Your implementation here - define the properties yourProperty1 and yourProperty2
 }
 
+// Step 2: Create a class YourClass that implements YourInterface
 class YourClass implements YourInterface {
-  // Your implementation here
+  // Your implementation here - implement the properties from YourInterface
+
+  // Step 3: Implement the properties in YourClass
+  constructor(yourProperty1: string, yourProperty2: number) {
+    // Your implementation here - assign the properties using the this keyword
+  }
 }
 
-const yourInstance = new YourClass(/* Provide necessary properties */);
-console.log("Your Instance:", yourInstance);
+// Step 4: Instantiate an object of YourClass
+// Your implementation here - instantiate an object of YourClass
 
-
-
-/**
- * 
- * Assignment 7: Interface with Classes
- * Assignment Description:
- * Understanding how interfaces work with classes is crucial. Define an interface YourInterface with properties property1, property2, and a method yourMethod. Create a class YourClass that implements this interface and displays the properties using the yourMethod. Instantiate a YourClass object and call the yourMethod.
- */
-// Assignment 7 Template
-interface YourInterface {
-  // Your implementation here
-}
-
-class YourClass implements YourInterface {
-  // Your implementation here
-}
-
-const yourInstance = new YourClass(/* Provide necessary properties */);
-yourInstance.yourMethod();
+// Step 5: Display the properties of the instantiated object
+console.log(`yourProperty1: ${yourClassInstance.yourProperty1}`);
+console.log(`yourProperty2: ${yourClassInstance.yourProperty2}`);
